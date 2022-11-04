@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +15,26 @@ namespace ProductList
             Category = category;
             ProductName = productName;
             Price = price;
+
+            Random rnd = new Random();
+            if(rnd.Next(2) == 1)
+            {
+                Sex = "Male";
+            }
+            else
+            {
+                Sex = "Female";
+            }
+
+            Age = rnd.Next(15);
         }
 
-        public int Id { get; set; }
+        public int Age { get; set; }
+        public string Sex { get; set; }
         public string Category { get; set; }
         public string ProductName { get; set; }
         public decimal Price { get; set; }
     }
+
+
 }
